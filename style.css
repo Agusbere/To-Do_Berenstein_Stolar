@@ -1,0 +1,11 @@
+li:has(input:checked) {
+   text-decoration: line-through;
+}
+
+#completadas:checked ~ ul li:has(input:not(:checked)) {
+   display: none;
+}
+
+#noCompletadas:checked ~ ul li:has(input:checked) {
+    display: none;
+ }

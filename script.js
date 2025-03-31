@@ -5,10 +5,10 @@ const del = document.getElementById('delete');
 function crearElemento(nombre, id, checked = false) {
    const li = document.createElement('li');
    li.id = id;
-   li.textContent = nombre;
    //    CHECKBOX
    const checkbox = document.createElement('input');
    checkbox.type = 'checkbox';
+   checkbox.id = 'checkbox-' + id;
    checkbox.checked = checked;
    checkbox.addEventListener('change', () =>
       localStorage.setItem(localStorage.key(id), checkbox.checked)
@@ -20,6 +20,14 @@ function crearElemento(nombre, id, checked = false) {
       li.remove();
       localStorage.removeItem(localStorage.key(id));
    });
+   //    LABEL
+   const label = document.createElement('label');
+   label.htmlFor = 'checkbox-' + id;
+   //    P
+   const p = document.createElement('p');
+   p.textContent = nombre;
+   li.appendChild(label);
+   li.appendChild(p);
    li.appendChild(checkbox);
    li.appendChild(btn);
    ul.appendChild(li);

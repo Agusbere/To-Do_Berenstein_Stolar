@@ -14,15 +14,22 @@
     <div class="content">
       <h1>To-do app</h1>
       <h4>Mostrar:</h4>
-      <p>Todas</p>
       <input type="radio" name="filtro" id="todas" checked />
-      <p>Completadas</p>
       <input type="radio" name="filtro" id="completadas" />
-      <p>Pendientes</p>
       <input type="radio" name="filtro" id="noCompletadas" />
+      <div class="boxFilter">
+        <label for="todas">Todas</label>
+        <label for="completadas">Completadas</label>
+        <label for="noCompletadas">Pendientes</label>
+      </div>
       <ul></ul>
       <div class="form">
-        <input type="text" name="nombreTarea" placeholder="Nombre de la tarea" id="name" />
+        <input
+          type="text"
+          name="nombreTarea"
+          placeholder="Nombre de la tarea"
+          id="name"
+        />
         <button id="add">
           <svg
             xmlns="http://www.w3.org/2000/svg"

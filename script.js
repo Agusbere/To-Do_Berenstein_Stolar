@@ -84,6 +84,8 @@ function masRapida() {
   document.getElementById("masRapida").textContent = rKey;
 }
 
+masRapida();
+
 add.addEventListener("click", () => {
   var nombre = name.value;
   name.value = "";
@@ -94,6 +96,10 @@ add.addEventListener("click", () => {
 
 del.addEventListener("click", () => {
   ul.innerText = "";
-  localStorage.clear();
-  lastId = -1;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    if (value !== "false") localStorage.removeItem(key);
+  }
+  location.reload();
 });
